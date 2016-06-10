@@ -3,7 +3,9 @@ export default class FlashMessage {
     this.message = message;
   }
 
-  display(){
-    alert(this.message);
+  render(){
+    //document.getElementById("main").innerHTML = this.message;
+    console.log(this.message);
+
   }
 }
