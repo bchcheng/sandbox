@@ -4,6 +4,7 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
       # "jsx": true
     }
   },
@@ -18,5 +19,6 @@
     # "react/jsx-uses-vars": 2,
     "no-unused-vars": 1,
     "prefer-const": 1,
+    "semi": 1,
   }
 }

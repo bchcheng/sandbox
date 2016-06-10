@@ -41,11 +41,11 @@ function bundle() {
 //gulp.task('default', ['transpile']);
 
 gulp.task('watch', ['copy-css', 'copy-html', 'serve'], () => {
-  gulp.watch('src/**/*', ['js-watch'])
-  gulp.watch('styles/**/*.scss',['sass'])
-  gulp.watch('public/css/*.css', sync.reload)
-  gulp.watch('./*.html', ['copy-html'])
-  gulp.watch('public/index.html', sync.reload)
+  gulp.watch('src/**/*', ['js-watch']);
+  gulp.watch('./styles/**/*.scss',['sass']);
+  gulp.watch('public/css/*.css', sync.reload);
+  gulp.watch('./*.html', ['copy-html']);
+  gulp.watch('public/index.html', sync.reload);
 
 });
 
@@ -61,7 +61,7 @@ gulp.task('copy-html', () => {
 
 gulp.task('serve', ['transpile'], () => sync.init({
   server: './',
-  port: 3008
+  port: 8888
 }));
 
 gulp.task('js-watch', ['transpile'], () => sync.reload());
@@ -71,11 +71,11 @@ gulp.task('transpile', ['lint'], () => bundle());
 gulp.task('lint', () => {
     return gulp.src(['src/**/*.js', 'gulpfile.babel.js'])
       .pipe(eslint())
-      .pipe(eslint.format())
+      .pipe(eslint.format());
 });
 
 gulp.task('sass', () => {
-  return gulp.src('sass/**/*.scss')
+  return gulp.src('./styles/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('./public/css'));
 });
